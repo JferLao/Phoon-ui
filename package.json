@@ -1,0 +1,23 @@
+{
+  "name": "phoon-ui",
+  "version": "1.0.0",
+  "description": "A Vue.js 2.0 UI Component Library for Web",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JferLao/Phoon-ui.git"
+  },
+  "keywords": [
+    "UI",
+    "vue"
+  ],
+  "author": "JferLao",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JferLao/Phoon-ui/issues"
+  },
+  "homepage": "https://github.com/JferLao/Phoon-ui#readme"
+}
