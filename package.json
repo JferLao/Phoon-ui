@@ -2,16 +2,34 @@
   "name": "phoon-ui",
   "version": "1.0.0",
   "description": "A Vue.js 2.0 UI Component Library for Web",
-  "main": "index.js",
+  "main": "lib/phoon-ui.common.js",
+  "files": [
+    "lib",
+    "src",
+    "packages",
+    "types"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "bootstrap": "cnpm i",
+    "build:file": "node build/bin/iconInit.js & node build/bin/build-entry.js & node build/bin/i18n.js & node build/bin/version.js",
+    "build:theme": "node build/bin/gen-cssfile && gulp build --gulpfile packages/theme-chalk/gulpfile.js && cp-cli packages/theme-chalk/lib lib/theme-chalk",
+    "build:utils": "cross-env BABEL_ENV=utils babel src --out-dir lib --ignore src/index.js",
+    "build:umd": "node build/bin/build-locale.js",
+    "clean": "rimraf lib && rimraf packages/*/lib ",
+    "i18n": "node build/bin/i18n.js",
+    "deploy:build": "npm run build:file && cross-env NODE_ENV=production webpack --config build/webpack.demo.js && echo phoon.ph.io>>examples/phoon-ui/CNAME",
+    "dev": "npm run bootstrap && npm run build:file && cross-env NODE_ENV=development webpack-dev-server --config build/webpack.demo.js & node build/bin/template.js",
+    "dev:play": "npm run build:file && cross-env NODE_ENV=development PLAY_ENV=true webpack-dev-server --config build/webpack.demo.js",
+    "dist": "npm run clean && npm run build:file && webpack --config build/webpack.conf.js && webpack --config build/webpack.common.js && webpack --config build/webpack.component.js && npm run build:utils && npm run build:umd && npm run build:theme",
+    "test":"npm run build:theme"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/JferLao/Phoon-ui.git"
   },
+  "typings": "types/index.d.ts",
   "keywords": [
-    "UI",
+    "components",
     "vue"
   ],
   "author": "JferLao",
@@ -19,5 +37,53 @@
   "bugs": {
     "url": "https://github.com/JferLao/Phoon-ui/issues"
   },
-  "homepage": "https://github.com/JferLao/Phoon-ui#readme"
+  "homepage": "https://github.com/JferLao/Phoon-ui#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-plugin-istanbul": "^4.1.1",
+    "babel-plugin-module-resolver": "^2.2.0",
+    "babel-plugin-syntax-jsx": "^6.18.0",
+    "babel-plugin-transform-vue-jsx": "^3.7.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-stage-2": "^6.24.1",
+    "babel-regenerator-runtime": "^6.5.0",
+    "chokidar": "^3.4.3",
+    "copy-webpack-plugin": "^6.2.1",
+    "cp-cli": "^2.0.0",
+    "cross-env": "^7.0.2",
+    "css-loader": "^5.0.0",
+    "deepmerge": "^4.2.2",
+    "file-save": "^0.2.0",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-cssmin": "^0.2.0",
+    "gulp-sass": "^4.1.0",
+    "highlight.js": "^10.3.1",
+    "html-webpack-plugin": "^4.5.0",
+    "json-templater": "^1.2.0",
+    "json-templates": "^4.1.0",
+    "mini-css-extract-plugin": "^1.2.0",
+    "node-sass": "^4.14.1",
+    "optimize-css-assets-webpack-plugin": "^5.0.4",
+    "postcss": "^8.1.1",
+    "progress-bar-webpack-plugin": "^2.1.0",
+    "rimraf": "^3.0.2",
+    "sass-loader": "^10.0.4",
+    "style-loader": "^2.0.0",
+    "terser-webpack-plugin": "^4.2.3",
+    "uglifyjs-webpack-plugin": "^2.2.0",
+    "uppercamelcase": "^3.0.0",
+    "vue": "^2.6.12",
+    "vue-loader": "^15.9.3",
+    "vue-router": "^3.4.7",
+    "vue-template-compiler": "^2.6.12",
+    "vue-template-es2015-compiler": "^1.9.1",
+    "webpack": "^4.14.0",
+    "webpack-cli": "^3.0.8",
+    "webpack-dev-server": "^3.1.11",
+    "webpack-node-externals": "^1.7.2"
+  }
 }

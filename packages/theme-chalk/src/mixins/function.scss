@@ -1,0 +1,45 @@
+@import './config';
+
+/* BEM 方法 */
+
+// 选择器转换成字符串
+@function selectorToString($selector) {
+    $selector:inspect($selector);
+    $selector:str-slice($selector,2,-2);
+    @return $selector;
+}
+
+// 判断--是否在选择器里面
+@function containsModifier($selector) {
+    $selector:selectorToString($selector);
+    @if str-index($selector,$modifierSeparator) {
+        @return true;
+    }@else{
+        @return false;
+    }
+}
+
+// 判断标签是否包含在选择器里
+@function containWhenFlag($selector) {
+    $selector:selectorToString($selector);
+    @if str-index($selector,'.'+$state-prefix) {
+        @return true;
+    }@else{
+        @return false;
+    }
+}
+
+// 判断标签是否包含在
+@function containPseudoClass($selector) {
+    $selector: selectorToString($selector);
+    @if str-index($selector,':') {
+        @return true;
+    }@else {
+        @return false;
+    }
+}
+
+// 判断是否同时满足特殊的条件
+@function hitAllSpecialNestRule($selector){
+    @return containsModifier($selector) or containWhenFlag($selector) or containPseudoClass($selector);
+}

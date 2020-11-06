@@ -1,0 +1,41 @@
+/* 控制用户能否选中文本 */
+@mixin utils-user-select($value) {
+    -moz-user-select: $value;
+    -webkit-user-select: $value;
+    -ms-user-select:$value;
+}
+// 使用@at-root指令，“跳出”將其嵌套在Sass中的位置，帶回到頂層
+/* 清除浮动 */
+@mixin utils-clearfix {
+    $selector: &;
+
+    @at-root {
+        #{$selector}::before,
+        #{$selector}::after{
+            display: table;
+            content: "";
+        }
+        #{$selector}::after{
+            clear: both;
+        }
+    }
+}
+
+/* 垂直居中 */
+@mixin utils-vertical-center {
+    @at-root {
+        #{$selector}::after {
+            display: inline-block;
+            content:"";
+            height:100%;
+            vertical-align: middle;
+        }
+    }
+}
+
+/* 省略 */
+@mixin utils-ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}

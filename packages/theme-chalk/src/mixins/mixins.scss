@@ -1,0 +1,154 @@
+// @content用在mixin里面的，当定义一个mixin后，并且设置了@content；
+// @include的时候可以传入相应的内容到mixin里面
+// !global 变量提升，将局部变量提升为全局变量，在其他函数体内也能访问到此变量
+
+@import "./function";
+@import "../common/var";
+
+/* BEM规范 [Block 块]__[Element 元素]--[Modifier 修饰符] */
+
+/* 更高级别的抽象或者是一个组件,仅作为边界
+    1.负责表述功能,不应该包含状态
+    2.不影响自身布局,不包含具体的样式
+    3.不能使用元素选择器和ID选择器
+*/
+@mixin b($block) {
+	$B: $namespace + "-" + $block !global;
+
+	.#{$B} {
+		@content;
+	}
+}
+
+/* 双下划线隔开(__)
+    1.表示目的,而不是状态
+    2.不能脱离Block父级使用
+*/
+@mixin e($element) {
+	$E: $element !global;
+	$selector: &;
+	$currentSelector: "";
+
+	@each $unit in $element {
+		$currentSelector: #{$currentSelector + "." + $B + $element-separator + $unit + ","};
+	}
+
+	@if hitAllSpecialNestRule($selector) {
+		@at-root {
+			#{$selector} {
+				#{$currentSelector} {
+					@content;
+				}
+			}
+		}
+	} @else {
+		@at-root {
+			#{$currentSelector} {
+				@content;
+			}
+		}
+	}
+}
+
+/* 双横杠隔开(--)
+    1.表示的是一个状态
+    2.不能单独使用
+*/
+@mixin m($modifier) {
+	$selector: &;
+	$currentSelector: "";
+
+	@each $unit in $modifier {
+		$currentSelector: #{$currentSelector + & + $modifier-separator + $unit + ","};
+	}
+
+	@at-root {
+		#{$currentSelector} {
+			@content;
+		}
+	}
+}
+
+@mixin configurable-m($modifier, $E-flag: false) {
+	$selector: &;
+	$interpolation: "";
+	@if $E-flag {
+		$interpolation: $element-separator + $E-flag;
+	}
+	@at-root {
+		#{$selector} {
+			.#{$B + $interpolation + $modifier-separator + $modifier} {
+				@content;
+			}
+		}
+	}
+}
+
+@mixin spec-selector($specSelector: "", $element: $E, $modifier: false, $block: $B) {
+	$modifierCombo: "";
+	@if $modifier {
+		$modifierCombo: $modifier-separator + $modifier;
+	}
+	@at-root {
+		#{&}#{$specSelector}.#{$block + element-separator + $element + $modifierCombo} {
+			@content;
+		}
+	}
+}
+
+@mixin meb($modifier: false, $element: $E, $block: $B) {
+	$selector: &;
+	$modifierCombo: "";
+	@if modifier {
+		$modifierCombo: $modifier-separator + $modifier;
+	}
+	@at-root {
+		#{$selector} {
+			.#{$block + $element-separator + $element + $modifierCombo} {
+				@content;
+			}
+		}
+	}
+}
+
+/* 为状态添加is前缀 */
+@mixin when($state) {
+	@at-root {
+		&.#{$state-prefix + $state} {
+			@content;
+		}
+	}
+}
+
+@mixin extend-rule($name) {
+	@extend #{"%shared-" + $name};
+}
+
+@mixin share-rule($name) {
+	$rule-name: "%shared-" + $name;
+
+	@at-root #{$rule-name} {
+		@content;
+	}
+}
+
+@mixin pseudo($pseudo) {
+	@at-root #{&}#{":#{$pseudo}"} {
+		@content;
+	}
+}
+
+/* Placehoder */
+@mixin placehoder {
+	&::-webkit-input-placeholder {
+		@content;
+	}
+
+	&::-moz-placeholder {
+		@content;
+	}
+
+	&::-ms-input-placeholder {
+		@content;
+	}
+}

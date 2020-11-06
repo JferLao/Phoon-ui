@@ -1,0 +1,17 @@
+{
+  "name": "phoon-theme-chalk",
+  "version": "1.0.0",
+  "description": "Phoon component chalk theme.",
+  "main": "lib/index.css",
+  "scripts": {
+    "build": "gulp build"
+  },
+  "keywords": [
+    "phoon"
+  ],
+  "author": "theme",
+  "license": "MIT",
+  "devDependencies": {
+    "cp-cli": "^2.0.0"
+  }
+}

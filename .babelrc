@@ -1,0 +1,44 @@
+{
+	"presets": [
+		[
+			"env",
+			{
+				"loose": true,
+				"modules": false,
+				"targets": {
+					"browsers": ["> 1%", "last 2 versions", "not ie <= 8"]
+				}
+			}
+		],
+		"stage-2"
+	],
+	"plugins": ["transform-vue-jsx"],
+	"env": {
+		"utils": {
+			"presets": [
+				[
+					"env",
+					{
+						"loose": true,
+						"modules": "commonjs",
+						"targets": {
+							"browsers": ["> 1%", "last 2 versions", "not ie <= 8"]
+						}
+					}
+				]
+			],
+			"plugins": [
+				/* 默认以项目phoon-ui为模块的搜索路径.也可以使用别名phoon-ui/src */
+				[
+					"module-resolver",
+					{
+						"root": ["phoon-ui"],
+						"alias": {
+							"phoon-ui/src": "phoon-ui/lib"
+						}
+					}
+				]
+			]
+		}
+	}
+}

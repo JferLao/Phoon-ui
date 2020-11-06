@@ -1,0 +1,18 @@
+[
+    {
+        "lang": "zh-CN",
+        "pages": {
+            "design": {
+                "1": "设计原则"
+            }
+        }
+    },
+    {
+        "lang": "en-US",
+        "pages": {
+            "design": {
+                "1": "Design Disciplines"
+            }
+        }
+    }
+]
