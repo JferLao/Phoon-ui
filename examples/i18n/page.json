@@ -2,17 +2,27 @@
     {
         "lang": "zh-CN",
         "pages": {
-            "design": {
-                "1": "设计原则"
+            "index":{
+                "1":"一套基于Vue.js的应用级",
+                "2":"UI组件库"
             }
+        },
+        "changelog": {
+            "1": "更新日志",
+            "2": "zh-CN"
         }
     },
     {
         "lang": "en-US",
         "pages": {
-            "design": {
-                "1": "Design Disciplines"
+            "index":{
+                "1":"A set of application level based on Vue.js",
+                "2":"UI component library"
             }
+        },
+        "changelog": {
+            "1": "Changelog",
+            "2": "en-US"
         }
     }
 ]

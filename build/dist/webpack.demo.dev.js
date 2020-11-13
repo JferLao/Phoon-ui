@@ -16,7 +16,7 @@ var HtmlWebpackPlugin = require("html-webpack-plugin"); //将webpack打包的嵌
 var ProgressBarPlugin = require("progress-bar-webpack-plugin"); //打包进度条
 
 
-var VueLoaderPlugin = require("vue-loader/lib/plugin");
+var VueLoaderPlugin = require('vue-loader/lib/plugin');
 
 var OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin"); //主要用来压缩css文件
 
@@ -102,7 +102,7 @@ var webpackConfig = {
   plugins: [new webpack.HotModuleReplacementPlugin(), //热更新
   new HtmlWebpackPlugin({
     template: "./examples/index.tpl",
-    filename: "index.html",
+    filename: "./index.html",
     favicon: "./examples/favicon.ico"
   }), new CopyWebpackPlugin({
     patterns: [{

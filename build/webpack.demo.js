@@ -4,7 +4,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin"); //将css提取�
 const CopyWebpackPlugin = require("copy-webpack-plugin"); //复制文件或目录
 const HtmlWebpackPlugin = require("html-webpack-plugin"); //将webpack打包的嵌入到新生成的html文件内
 const ProgressBarPlugin = require("progress-bar-webpack-plugin"); //打包进度条
-const VueLoaderPlugin = require("vue-loader/lib/plugin");
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin"); //主要用来压缩css文件
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 
@@ -100,7 +100,7 @@ const webpackConfig = {
     new webpack.HotModuleReplacementPlugin(), //热更新
     new HtmlWebpackPlugin({
       template: "./examples/index.tpl",
-      filename: "index.html",
+      filename: "./index.html",
       favicon: "./examples/favicon.ico",
     }),
     new CopyWebpackPlugin({ patterns: [{ from: "examples/versions.json" }] }),
@@ -114,9 +114,9 @@ const webpackConfig = {
       vue: {
         compilerOptions: {
           preserveWhitespace: false,
-        },
-      },
-    }),
+        }
+      }
+    })
   ],
   optimization: {
     minimizer: [],
@@ -149,8 +149,8 @@ if (isProduction) {
         test: /\/src\//,
         name: "phoon-ui",
         chunks: "all",
-      },
-    },
+      }
+    }
   };
   webpackConfig.devtool = false;
 }

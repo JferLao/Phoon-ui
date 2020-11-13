@@ -1,0 +1,44 @@
+[
+    {
+        "lang":"zh-CN",
+        "demo":{
+            "hide-text":"隐藏代码",
+            "show-text":"显示代码"
+        },
+        "footer":{
+            "links":"链接",
+            "repo":"代码仓库",
+            "changelog":"更新日志",
+            "theme":"在线主题生成",
+            "faq":"常见问题"
+        },
+        "header":{
+            "components":"组件",
+            "theme":"主题"
+        },
+        "nav":{
+            "dropdown":"版本："
+        }
+    },
+    {
+        "lang":"en-US",
+        "demo":{
+            "hide-text":"Hide",
+            "show-text":"Expand"
+        },
+        "footer":{
+            "links":"Links",
+            "repo":"Github",
+            "changelog":"Changelog",
+            "theme":"Theme Roller",
+            "faq":"FAQ"
+        },
+        "header":{
+            "components":"Component",
+            "theme":"Theme"
+        },
+        "nav":{
+            "dropdown":"Version："
+        }
+    }
+]

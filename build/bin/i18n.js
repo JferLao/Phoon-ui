@@ -7,7 +7,6 @@ var langConfig = require('../../examples/i18n/page.json');
 
 langConfig.forEach(lang => {
     try {
-        console.log(lang)
         fs.statSync(path.resolve(__dirname,`../../examples/pages/${ lang.lang }`));
     } catch(e) {
         fs.mkdirSync(path.resolve(__dirname,`../../examples/pages/${ lang.lang }`));
