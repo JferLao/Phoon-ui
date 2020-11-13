@@ -7,7 +7,7 @@
         left:0;
         right:0;
         background-color:#FFF;
-        background-image:"examples/assets/images/background.png";
+        background-image:url("https://raw.githubusercontent.com/JferLao/Phoon-ui/main/examples/assets/images/background.png");
         background-repeat: no-repeat;
         background-size: cover;
         background-position: 50%;
