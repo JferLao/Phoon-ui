@@ -1,6 +1,5 @@
 /* 覆盖默认的渲染策略 */
 module.exports = (md) => {
-	console.log(md.renderer.rules.fence);
 	const defaultRender = md.renderer.rules.fence;
 	md.renderer.rules.fence = (tokens, idx, options, env, self) => {
 		const token = tokens[idx];

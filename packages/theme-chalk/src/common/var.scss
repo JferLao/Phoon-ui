@@ -1,194 +1,186 @@
 /* Color */
-$--color-primary:#005CAF !default; //TOKIWA
-$--color-white:#FFFFFF !default;
-$--color-black:#000000 !default;
-$--color-primary-light-1:mix($--color-white,$--color-primary,10%) !default;
-$--color-primary-light-2:mix($--color-white,$--color-primary,20%) !default;
-$--color-primary-light-3:mix($--color-white,$--color-primary,30%) !default;
-$--color-primary-light-4:mix($--color-white,$--color-primary,40%) !default;
-$--color-primary-light-5:mix($--color-white,$--color-primary,50%) !default;
-$--color-primary-light-6:mix($--color-white,$--color-primary,60%) !default;
-$--color-primary-light-7:mix($--color-white,$--color-primary,70%) !default;
-$--color-primary-light-8:mix($--color-white,$--color-primary,80%) !default;
-$--color-primary-light-9:mix($--color-white,$--color-primary,90%) !default;
-$--color-success: #227D51 !default;
-$--color-warning: #F9BF45 !default;
-$--color-error:  #E83015 !default;
-$--color-info:    #787D7B !default;
-$--color-success-light:     mix($--color-white, $--color-success, 80%) !default;
-$--color-warning-light:     mix($--color-white, $--color-warning, 80%) !default;
-$--color-error-light:      mix($--color-white, $--color-error, 80%) !default;
-$--color-info-light:        mix($--color-white, $--color-info, 80%) !default;
-$--color-success-lighter:   mix($--color-white, $--color-success, 90%) !default;
-$--color-warning-lighter:   mix($--color-white, $--color-warning, 90%) !default;
-$--color-error-lighter:    mix($--color-white, $--color-error, 90%) !default;
-$--color-info-lighter:      mix($--color-white, $--color-info, 90%) !default;
-$--color-text-primary:      #434343 !default;
-$--color-text-regular:      #5C5C5C !default;
-$--color-text-secondary:    #858585 !default;
-$--color-text-placeholder:  #A3A3A3 !default;
+$--color-primary: #005caf !default; //TOKIWA
+$--color-white: #ffffff !default;
+$--color-black: #000000 !default;
+$--color-primary-light-1: mix($--color-white, $--color-primary, 10%) !default;
+$--color-primary-light-2: mix($--color-white, $--color-primary, 20%) !default;
+$--color-primary-light-3: mix($--color-white, $--color-primary, 30%) !default;
+$--color-primary-light-4: mix($--color-white, $--color-primary, 40%) !default;
+$--color-primary-light-5: mix($--color-white, $--color-primary, 50%) !default;
+$--color-primary-light-6: mix($--color-white, $--color-primary, 60%) !default;
+$--color-primary-light-7: mix($--color-white, $--color-primary, 70%) !default;
+$--color-primary-light-8: mix($--color-white, $--color-primary, 80%) !default;
+$--color-primary-light-9: mix($--color-white, $--color-primary, 90%) !default;
+$--color-success: #227d51 !default;
+$--color-warning: #f9bf45 !default;
+$--color-error: #e83015 !default;
+$--color-info: #787d7b !default;
+$--color-success-light: mix($--color-white, $--color-success, 80%) !default;
+$--color-warning-light: mix($--color-white, $--color-warning, 80%) !default;
+$--color-error-light: mix($--color-white, $--color-error, 80%) !default;
+$--color-info-light: mix($--color-white, $--color-info, 80%) !default;
+$--color-success-lighter: mix($--color-white, $--color-success, 90%) !default;
+$--color-warning-lighter: mix($--color-white, $--color-warning, 90%) !default;
+$--color-error-lighter: mix($--color-white, $--color-error, 90%) !default;
+$--color-info-lighter: mix($--color-white, $--color-info, 90%) !default;
+$--color-text-primary: #434343 !default;
+$--color-text-regular: #5c5c5c !default;
+$--color-text-secondary: #858585 !default;
+$--color-text-placeholder: #a3a3a3 !default;
 
 /* Background */
-$--background-color-base:#F5F5F5 !default;
-$--background-color-light:#FFFFFB !default;
-$--background-color-default:#FFFFFF !default;
+$--background-color-base: #f5f5f5 !default;
+$--background-color-light: #fffffb !default;
+$--background-color-default: #ffffff !default;
 
 /* Animation */
-$--ease-base-out:cubic-bezier(0.7,0.3,0.1,1) !default;
-$--ease-base-in:cubic-bezier(0.9,0,0.3,0.7) !default;
-$--ease-out:cubic-bezier(0.215,0.61,0.355,1) !default;
-$--ease-in:cubic-bezier(0.55,0.055,0.675,0.19) !default;
-$--ease-in-out:cubic-bezier(0.645, 0.045, 0.355, 1) !default;
-$--ease-out-back:cubic-bezier(0.12, 0.4, 0.29, 1.46) !default;
-$--ease-in-back:cubic-bezier(0.71,-0.46,0.88,0.6) !default;
-$--ease-in-out-back:cubic-bezier(0.71, -0.46, 0.29, 1.46) !default;
-$--ease-out-circ:cubic-bezier(0.08, 0.82, 0.17, 1 ) !default;   //cric先很快加速然后最后一点距离缓慢
-$--ease-in-circ:cubic-bezier(0.6, 0.04, 0.98, 0.34) !default;
-$--ease-in-out-circ:cubic-bezier(0.78, 0.14, 0.15, 0.86) !default;
-$--ease-out-quint:cubic-bezier(0.23, 1, 0.32, 1) !default;      //quint先很缓慢在迅速加速
+$--ease-base-out: cubic-bezier(0.7, 0.3, 0.1, 1) !default;
+$--ease-base-in: cubic-bezier(0.9, 0, 0.3, 0.7) !default;
+$--ease-out: cubic-bezier(0.215, 0.61, 0.355, 1) !default;
+$--ease-in: cubic-bezier(0.55, 0.055, 0.675, 0.19) !default;
+$--ease-in-out: cubic-bezier(0.645, 0.045, 0.355, 1) !default;
+$--ease-out-back: cubic-bezier(0.12, 0.4, 0.29, 1.46) !default;
+$--ease-in-back: cubic-bezier(0.71, -0.46, 0.88, 0.6) !default;
+$--ease-in-out-back: cubic-bezier(0.71, -0.46, 0.29, 1.46) !default;
+$--ease-out-circ: cubic-bezier(0.08, 0.82, 0.17, 1) !default; //cric先很快加速然后最后一点距离缓慢
+$--ease-in-circ: cubic-bezier(0.6, 0.04, 0.98, 0.34) !default;
+$--ease-in-out-circ: cubic-bezier(0.78, 0.14, 0.15, 0.86) !default;
+$--ease-out-quint: cubic-bezier(0.23, 1, 0.32, 1) !default; //quint先很缓慢在迅速加速
 $--ease-in-quint: cubic-bezier(0.755, 0.05, 0.855, 0.06) !default;
 $--ease-in-out-quint: cubic-bezier(0.86, 0, 0.07, 1) !default;
 
 /* Link */
-$--link-color:$--color-primary-light-2 !default;
-$--link-hover-color:$--color-primary !default;
-$--link-active-color:$--color-primary-light-4 !default;
-
+$--link-color: $--color-primary-light-2 !default;
+$--link-hover-color: $--color-primary !default;
+$--link-active-color: $--color-primary-light-4 !default;
 
 /* Border */
-$--border-color-base: #DCDFE6 !default;
-$--border-color-light: #E4E7ED !default;
-$--border-color-lighter: #EBEEF5 !default;
-$--border-color-extra-light: #F2F6FC !default;
-$--border-width-base:1px !default;
-$--border-style-base:solid !default;
-$--border-color-hover:$--color-text-placeholder !default;
+$--border-color-base: #dcdfe6 !default;
+$--border-color-light: #e4e7ed !default;
+$--border-color-lighter: #ebeef5 !default;
+$--border-color-extra-light: #f2f6fc !default;
+$--border-width-base: 1px !default;
+$--border-style-base: solid !default;
+$--border-color-hover: $--color-text-placeholder !default;
 $--border-base: $--border-width-base $--border-style-base $--border-color-base !default;
 $--border-radius-base: 4px !default;
 $--border-radius-small: 2px !default;
-$--border-radius-circle:100%  !default;
+$--border-radius-circle: 100% !default;
 $--border-radius-zero: 0 !default;
 
 /* Shadow */
-$--shadow-color:rgba(0,0,0,0.15);
-$--shadow-up:0 -2px 8px $--shadow-color; 
-$--shadow-down:  0 2px 8px $--shadow-color;
+$--shadow-color: rgba(0, 0, 0, 0.15);
+$--shadow-up: 0 -2px 8px $--shadow-color;
+$--shadow-down: 0 2px 8px $--shadow-color;
 $--shadow-left: -2px 0 8px $--shadow-color;
 $--shadow-right: 2px 0 8px $--shadow-color;
-$--box-shadow-base:$--shadow-down;
+$--box-shadow-base: $--shadow-down;
 
 /* Fill */
-$--fill-base:$--color-white !default;
-
+$--fill-base: $--color-white !default;
 
 /* Font */
-$--font-path: ' fonts' !default;
-$--font-display: 'auto' !default;
+$--font-path: " fonts" !default;
+$--font-display: "auto" !default;
 $--font-size-extra-large: 20px !default;
-$--font-size-large:18px !default;
-$--font-size-medium:16px !default;
-$--font-size-base:14px !default;
-$--font-size-small:13px !default;
-$--font-size-extra-small:12px !default;
+$--font-size-large: 18px !default;
+$--font-size-medium: 16px !default;
+$--font-size-base: 14px !default;
+$--font-size-small: 13px !default;
+$--font-size-extra-small: 12px !default;
 $--font-weight-primary: 500 !default;
-$--font-weight-secondary:100 !default;
-$--font-line-height-primary:24px !default;
+$--font-weight-secondary: 100 !default;
+$--font-line-height-primary: 24px !default;
 $--font-line-height-secondary: 16px !default;
 $--font-color-disabled-base: #bbb !default;
 
-
 /* Size */
-$--size-base:14px !default;
-
+$--size-base: 14px !default;
 
 /* Z-index */
-$--index-normal:1 !default;
-$--index-top:1000 !default;
+$--index-normal: 1 !default;
+$--index-top: 1000 !default;
 $--index-popper: 2000 !default;
 
 /* Disabled */
-$--disabled-color:$--color-text-placeholder !default;
+$--disabled-color: $--color-text-placeholder !default;
 
 /* ICON */
-$--icon-color:#666 !default;
-$--icon-color-base:$--color-info !default;
+$--icon-color: #666 !default;
+$--icon-color-base: $--color-info !default;
 
 /* Padding */
-$--padding-large:20px !default;
-$--padding-default:16px !default;
-$--padding-small:12px !default;
+$--padding-large: 20px !default;
+$--padding-default: 16px !default;
+$--padding-small: 12px !default;
 
 /* Outline */
-$--outline-size:0 !default;
-$--outline-width:2px !default;
-$--outline-color:$--color-primary !default;
-
+$--outline-size: 0 !default;
+$--outline-width: 2px !default;
+$--outline-color: $--color-primary !default;
 
 /* Buttons */
-$--button-font-weight:$--font-weight-primary  !default;
-$--button-border-width:$--border-width-base !default;
-$--button-border-style:$--border-style-base !default;
+$--button-font-weight: $--font-weight-primary !default;
+$--button-border-width: $--border-width-base !default;
+$--button-border-style: $--border-style-base !default;
 $--button-shadow: 0 2px 0 rgba(0, 0, 0, 0.015) !default;
-$--button-primary-shadow:0 2px 0 rgba(0, 0, 0, 0.045) !default;
-$--button-text-shadow:0 -1px 0 rgba(0, 0, 0, 0.12) !default;
+$--button-primary-shadow: 0 2px 0 rgba(0, 0, 0, 0.045) !default;
+$--button-text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.12) !default;
 
-
-$--button-font-size:$--font-size-base !default;
-$--button-large-font-size:16px !default;
-$--button-small-font-size:12px !default;
+$--button-font-size: $--font-size-base !default;
+$--button-large-font-size: 16px !default;
+$--button-small-font-size: 12px !default;
 
 $--button-padding-vertical: 10px !default;
-$--button-padding-horizontal:$--padding-default !default;
+$--button-padding-horizontal: $--padding-default !default;
 $--button-large-padding-vertical: 12px !default;
-$--button-large-padding-horizontal:$--padding-large !default;
+$--button-large-padding-horizontal: $--padding-large !default;
 $--button-small-padding-vertical: 8px !default;
-$--button-small-padding-horizontal:$--padding-small !default;
+$--button-small-padding-horizontal: $--padding-small !default;
 
-$--button-border-radius:$--border-radius-base !default;
-$--button-large-border-radius:#{$--border-radius-base + 1 } !default;
-$--button-small-border-radius:#{$--border-radius-base - 1 } !default;
+$--button-border-radius: $--border-radius-base !default;
+$--button-large-border-radius: #{$--border-radius-base + 1} !default;
+$--button-small-border-radius: #{$--border-radius-base - 1} !default;
 
-$--button-default-font-color:$--color-text-regular !default;
-$--button-default-background-color:$--color-white !default;
-$--button-default-border-color:$--border-color-base !default;
+$--button-default-font-color: $--color-text-regular !default;
+$--button-default-background-color: $--color-white !default;
+$--button-default-border-color: $--border-color-base !default;
 
-$--button-disabled-font-color:$--color-text-placeholder !default;
-$--button-disabled-background-color:$--color-white !default;
-$--button-disabled-border-color:$--border-color-base !default;
+$--button-disabled-font-color: $--color-text-placeholder !default;
+$--button-disabled-background-color: $--color-white !default;
+$--button-disabled-border-color: $--border-color-base !default;
 
-$--button-primary-font-color:$--color-white !default;
-$--button-primary-background-color:$--color-primary !default;
-$--button-primary-border-color:$--color-primary !default;
+$--button-primary-font-color: $--color-white !default;
+$--button-primary-background-color: $--color-primary !default;
+$--button-primary-border-color: $--color-primary !default;
 
-$--button-success-font-color:$--color-white !default;
-$--button-success-background-color:$--color-success !default;
-$--button-success-border-color:$--color-success !default;
+$--button-success-font-color: $--color-white !default;
+$--button-success-background-color: $--color-success !default;
+$--button-success-border-color: $--color-success !default;
 
-$--button-warning-font-color:$--color-white !default;
-$--button-warning-background-color:$--color-warning !default;
-$--button-warning-border-color:$--color-warning !default;
+$--button-warning-font-color: $--color-white !default;
+$--button-warning-background-color: $--color-warning !default;
+$--button-warning-border-color: $--color-warning !default;
 
-$--button-error-font-color:$--color-white !default;
-$--button-error-background-color:$--color-error !default;
-$--button-error-border-color:$--color-error !default;
+$--button-error-font-color: $--color-white !default;
+$--button-error-background-color: $--color-error !default;
+$--button-error-border-color: $--color-error !default;
 
-$--button-info-font-color:$--color-white !default;
-$--button-info-background-color:$--color-info !default;
-$--button-info-border-color:$--color-info !default;
+$--button-info-font-color: $--color-white !default;
+$--button-info-background-color: $--color-info !default;
+$--button-info-border-color: $--color-info !default;
 
-$--button-text-font-color:$--color-text-primary !default;
-$--button-text-background-color:transparent !default;
-$--button-text-border-color:transparent !default;
+$--button-text-font-color: $--color-text-primary !default;
+$--button-text-background-color: transparent !default;
+$--button-text-border-color: transparent !default;
 
-$--button-dashed-font-color:$--color-text-primary !default;
-$--button-dashed-background-color:$--color-white !default;
-$--button-dashed-border-color:$--border-color-base !default;
+$--button-dashed-font-color: $--color-text-primary !default;
+$--button-dashed-background-color: $--color-white !default;
+$--button-dashed-border-color: $--border-color-base !default;
 
 $--button-hover-tint-percent: 20% !default;
 $--button-active-shade-percent: 10% !default;
 
-
-
 /* ScrollBar */
-$--scrollbar-background-color:rgba($--color-text-secondary,.3) !default;
-$--scorllbar-hover-background-color:rgba($--color-text-secondary,.5) !default;
+$--scrollbar-background-color: rgba($--color-text-secondary, 0.3) !default;
+$--scorllbar-hover-background-color: rgba($--color-text-secondary, 0.5) !default;

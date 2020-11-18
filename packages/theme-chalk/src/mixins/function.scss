@@ -12,7 +12,7 @@
 // 判断--是否在选择器里面
 @function containsModifier($selector) {
     $selector:selectorToString($selector);
-    @if str-index($selector,$modifierSeparator) {
+    @if str-index($selector,$modifier-separator) {
         @return true;
     }@else{
         @return false;

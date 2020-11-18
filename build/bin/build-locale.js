@@ -37,7 +37,6 @@ fileList
           .replace('global.', 'global.PHOON.lang = global.PHOON.lang || {}; \n    global.PHOON.lang.');
         save(resolve(__dirname, "../../lib/umd/locale", file)).write(code); //保存文件到合并地址目录上
 
-        console.log(file);
       }
     });
   });

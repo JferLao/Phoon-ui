@@ -3,13 +3,18 @@
   "version": "1.0.0",
   "description": "Phoon component chalk theme.",
   "main": "lib/index.css",
+  "style": "lib/index.css",
+  "files": [
+    "lib",
+    "src"
+  ],
   "scripts": {
     "build": "gulp build"
   },
   "keywords": [
     "phoon"
   ],
-  "author": "theme",
+  "author": "JferLao",
   "license": "MIT",
   "devDependencies": {
     "cp-cli": "^2.0.0"

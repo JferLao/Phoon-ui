@@ -9,7 +9,7 @@ function compile(){
     return src('./src/*.scss')   //从文件系统读取对象并返回管道的开始或中间使用的流
         .pipe(sass.sync())      //编译sass
         .pipe(autoprefixer({
-            browsers: ['ie > 9', 'last 2 versions'],    //主流浏览器的最新两个版本加前缀
+            overrideBrowserslist: ['ie > 9', 'last 2 versions'],    //主流浏览器的最新两个版本加前缀
             cascade:false       //是否美化属性值
         }))
         .pipe(cssmin())         //压缩css

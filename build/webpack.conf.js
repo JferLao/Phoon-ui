@@ -11,9 +11,9 @@ module.exports = {
     app: ["./src/index.js"],
   },
   output: {
-    path: path.resolve(process.cwd(), "./lib"),
-    publicPath: "/dist/",
-    filename: "index.js",
+    path: path.resolve(process.cwd(), './lib'),
+    publicPath: '/dist/',
+    filename: 'index.js',
     chunkFilename: "[id].js",
     libraryTarget: "umd", //所有的模块定义下都可运行的方式
     libraryExport: "default", //导出默认分配给libraryTarget

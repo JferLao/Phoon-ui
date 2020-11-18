@@ -1,79 +1,79 @@
-@import "mixins/mixins";
+@import "./mixins/mixins";
 @import "common/var";
 
-
 /* ph-scrollbar */
-@include b(scrollbar){
-    overflow: hidden;
-    position: relative;
+@include b(scrollbar) {
+	overflow: hidden;
+	position: relative;
 
-    &:hover,&:active,&:focus {
-        > .ph-scrollbar__bar {
-            opacity: 1;
-            transition: opacity 340ms ease-out;
-        }
-    }
+	&:hover,
+	&:active,
+	&:focus {
+		> .ph-scrollbar__bar {
+			opacity: 1;
+			transition: opacity 340ms ease-out;
+		}
+	}
 
-    /* ph-scrollbar__wrap */
-    @include e(wrap) {
-        overflow: scroll;
-        height: 100%;
+	/* ph-scrollbar__wrap */
+	@include e(wrap) {
+		overflow: scroll;
+		height: 100%;
 
-        /* ph-scroll__wrap--hideen-default */
-        @include m(hidden-default) {
-            scrollbar-width: none;
-            &::-webkit-scrollbar {
-                width: 0;
-                height: 0;
-            }
-        }
-    }
+		/* ph-scroll__wrap--hideen-default */
+		@include m(hidden-default) {
+			scrollbar-width: none;
+			&::-webkit-scrollbar {
+				width: 0;
+				height: 0;
+			}
+		}
+	}
 
-    /* ph-scrollbar__thumb */
-    @include e(thumb){
-        position: relative;
-        display: block;
-        width: 0;
-        height: 0;
-        cursor: pointer;
-        border-radius: inherit;
-        background-color: $--scrollbar-background-color;
-        transition: .3s background-color;
+	/* ph-scrollbar__thumb */
+	@include e(thumb) {
+		position: relative;
+		display: block;
+		width: 0;
+		height: 0;
+		cursor: pointer;
+		border-radius: inherit;
+		background-color: $--scrollbar-background-color;
+		transition: 0.3s background-color;
 
-        &:hover {
-            background-color: $--scrollbar-hover-background-color;
-        }
-    }
+		&:hover {
+			background-color: $--scorllbar-hover-background-color;
+		}
+	}
 
+	/* ph_scrollbar__bar */
+	@include e(bar) {
+		position: absolute;
+		right: 2px;
+		bottom: 2px;
+		z-index: 1;
+		border-radius: 4px;
+		opacity: 0;
+		transition: opacity 120ms ease-out;
 
-    /* ph_scrollbar__bar */
-    @include e(bar){
-        position: absolute;
-        right: 2px;
-        bottom: 2px;
-        z-index: 1;
-        border-radius: 4px;
-        opacity: 0;
-        transition: opacity 120ms ease-out;
+		/* ph-scrollbar__bar is-vertical */
+		@include when(vertical) {
+			height: 6px;
+			top: 2px;
 
-        /* ph-scrollbar__bar is-vertical */
-        @include when(vertical){
-            height: 6px;
-            top: 2px;
+			> div {
+				width: 100%;
+			}
+		}
 
-            > div {
-                width: 100%;
-            }
-        }
+		/* ph-scrollbar__bar is-horizontal */
+		@include when(horizontal) {
+			width: 6px;
+			left: 2px;
 
-        /* ph-scrollbar__bar is-horizontal */
-        @include when(horizontal){
-            width: 6px;
-            left: 2px;
-
-            > div {
-                height: 100%;
-            }
-        }
-    }
+			> div {
+				height: 100%;
+			}
+		}
+	}
 }
