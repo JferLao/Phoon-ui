@@ -1,12 +1,13 @@
 <template>
-    <div class="changelog">
-        <div class="heading>
-            <ph-button type="primary">
-                <a href="https://github.com/JferLao/Phoon-ui/releases" target="_blank">Github Releases</a>
+    <div class="page-changelog">
+        <div class="heading">
+            <ph-button class="fr">
+                <a href="https://github.com/JferLao/Phoon-ui/releases" target="_blank">GitHub Releases</a>
             </ph-button>
             <%= 1 >
         </div>
-        <ChangeLog></ChangeLog>
+        <ul class="timeline" ref="timeline"></ul>
+        <change-log ref="changeLog"></change-log>
     </div>
 </template>
 <script>

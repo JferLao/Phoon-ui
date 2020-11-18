@@ -24,7 +24,7 @@
                     "name":"自定义主题"
                 },
                 {
-                    "path":"i18n",
+                    "path":"/i18n",
                     "name":"国际化"
                 }
             ]
@@ -36,7 +36,7 @@
                     "groupName":"Basic",
                     "list":[
                         {
-                            "path":"button",
+                            "path":"/button",
                             "name":"Button按钮"
                         }
                     ]
@@ -69,7 +69,7 @@
                     "name":"Custom Theme"
                 },
                 {
-                    "path":"i18n",
+                    "path":"/i18n",
                     "name":"Internationalization"
                 }
             ]
@@ -81,7 +81,7 @@
                     "groupName":"Basic",
                     "list":[
                         {
-                            "path":"button",
+                            "path":"/button",
                             "name":"Button"
                         }
                     ]

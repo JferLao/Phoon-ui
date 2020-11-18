@@ -1,10 +1,13 @@
 <template>
 	<div id="app" :class="{ 'is-component': isComponent }">
-		<!-- header -->
-		<div class="content">
+		<main-header v-if="lang !== 'play'"></main-header>
+		<div class="main-cnt">
 			<router-view></router-view>
 		</div>
-		<!-- footer -->
+		<!-- main-footer-->
+		<!-- 
+		<main-footer v-if="lang !== 'play' && !isComponent"></main-footer>
+		-->
 	</div>
 </template>
 
@@ -35,9 +38,9 @@ export default {
 		isComponent() {
 			return /^component-/.test(this.$route.name || "");
 		},
-  },
-  mounted() {
-    localize(this.lang)
-  }
+	},
+	mounted() {
+		localize(this.lang);
+	},
 };
 </script>

@@ -4,12 +4,23 @@ import hljs from "highlight.js";
 import Phoon from "main/index.js";
 import routes from "./route.config";
 import entry from "./app";
-import "packages/theme-chalk/src/index.scss";
 import icon from "./icon.json";
 import title from './i18n/title.json'
+import MainHeader from './components/header';
+import SiderNav from './components/side-nav';
+import MainFooter from './components/footer'
 
+
+
+import "packages/theme-chalk/src/index.scss";
+import './assets/style/common.css';
 Vue.use(Phoon);
 Vue.use(VueRouter);
+
+Vue.component('main-header', MainHeader);
+Vue.component('sider-nav',SiderNav);
+Vue.component('main-footer', MainFooter);
+/* 样式 */
 
 const globalPh = new Vue({
 	data: { $isPh: false }, //是否phoon用户
@@ -26,6 +37,7 @@ Vue.mixin({
 });
 
 Vue.prototype.$icon = icon; 
+
 
 const router = new VueRouter({
 	mode: "hash",
@@ -46,7 +58,7 @@ router.afterEach((route) => {
         }
     }
     document.title = 'Phoon';
-    ga('send', 'event', 'PageView', route.name);
+    // ga('send', 'event', 'PageView', route.name);
 });
 
 new Vue({ 

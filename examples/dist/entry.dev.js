@@ -12,11 +12,19 @@ var _route = _interopRequireDefault(require("./route.config"));
 
 var _app = _interopRequireDefault(require("./app"));
 
-require("packages/theme-chalk/src/index.scss");
-
 var _icon = _interopRequireDefault(require("./icon.json"));
 
 var _title = _interopRequireDefault(require("./i18n/title.json"));
+
+var _header = _interopRequireDefault(require("./components/header"));
+
+var _sideNav = _interopRequireDefault(require("./components/side-nav"));
+
+var _footer = _interopRequireDefault(require("./components/footer"));
+
+require("packages/theme-chalk/src/index.scss");
+
+require("./assets/style/common.css");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -29,6 +37,14 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 _vue["default"].use(_index["default"]);
 
 _vue["default"].use(_vueRouter["default"]);
+
+_vue["default"].component('main-header', _header["default"]);
+
+_vue["default"].component('sider-nav', _sideNav["default"]);
+
+_vue["default"].component('main-footer', _footer["default"]);
+/* 样式 */
+
 
 var globalPh = new _vue["default"]({
   data: {
@@ -71,8 +87,7 @@ router.afterEach(function (route) {
     }
   }
 
-  document.title = 'Phoon';
-  ga('send', 'event', 'PageView', route.name);
+  document.title = 'Phoon'; // ga('send', 'event', 'PageView', route.name);
 });
 new _vue["default"](_objectSpread({}, _app["default"], {
   router: router

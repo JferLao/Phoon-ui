@@ -254,7 +254,7 @@
 	}
 }
 
-/* ph-button-group */
+/* ph-button--group */
 @include b(button-group) {
 	@include utils-clearfix;
 	display: inline-block;

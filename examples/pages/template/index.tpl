@@ -7,17 +7,19 @@
         left:0;
         right:0;
         background-color:#FFF;
-        background-image:url("https://raw.githubusercontent.com/JferLao/Phoon-ui/main/examples/assets/images/background.png");
-        background-repeat: no-repeat;
+        background-image:url("examples/assets/images/background.png");
+        background-position: 100%;
         background-size: cover;
-        background-position: 50%;
+        background-repeat: no-repeat;
         overflow: hidden;
         .index-container{
             width:50%;
             height:100%;
+            padding-left: 20%;
+            padding-top:15%;
             .index-content{
                 display:flex;
-                jistify-content:center;
+                justify-content:center;
                 flex-direction:column;
                 .index-title{
                     position:relative;
@@ -26,8 +28,16 @@
                         border-style:none
                     }
                     .index-image{
-                        heigth:100px;
+                        height:100px;
                     }
+                }
+                .index-content{
+                    font-size: 24px;
+                    margin-top: 10px;
+                    padding-left: 16px;
+                }
+                .index-actions{
+                    margin:80px 0 150px 16px;
                 }
             }
         }
@@ -41,12 +51,31 @@
             <div class="index-container">
                 <div class="index-content">
                     <span class="index-title">
-                        <img src="examples/assets/images/logo.jpg" alt="" class="index-image">
+                        <img src="examples/assets/images/logo.png" alt="" class="index-image">
                     </span>
-                    <h2><%= 1></h2>
-                    <p><%= 2></p>
+                    <div class="index-content"><%= 1></div>
+                    <div class="index-content"><%= 2></div>
+                    <div class="index-actions">
+                        
+                        <ph-button type="primary" round @click="to('home')"><%=3 ></ph-button>
+                        <ph-button type="default" round @click="to('github')"><%=4 ></ph-button>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </template>
+<script>
+export default {
+    methods:{
+        to(path){
+           path==='home'? this.$router.push({path:`${this.lang}/component/installation`}) : window.open('https://github.com/JferLao/Phoon-ui','_blank')
+        }
+    },
+    computed: {
+		lang() {
+			return this.$route.path.split("/")[1] || "zh-CN";
+		},
+	},
+}
+</script>

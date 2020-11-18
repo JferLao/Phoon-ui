@@ -10,7 +10,8 @@
             "repo":"代码仓库",
             "changelog":"更新日志",
             "theme":"在线主题生成",
-            "faq":"常见问题"
+            "faq":"常见问题",
+            "community":"交流"
         },
         "header":{
             "components":"组件",
@@ -31,7 +32,8 @@
             "repo":"Github",
             "changelog":"Changelog",
             "theme":"Theme Roller",
-            "faq":"FAQ"
+            "faq":"FAQ",
+            "community":"Community"
         },
         "header":{
             "components":"Component",

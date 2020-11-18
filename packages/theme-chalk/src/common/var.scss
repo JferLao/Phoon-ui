@@ -186,3 +186,9 @@ $--button-dashed-border-color:$--border-color-base !default;
 
 $--button-hover-tint-percent: 20% !default;
 $--button-active-shade-percent: 10% !default;
+
+
+
+/* ScrollBar */
+$--scrollbar-background-color:rgba($--color-text-secondary,.3) !default;
+$--scorllbar-hover-background-color:rgba($--color-text-secondary,.5) !default;
