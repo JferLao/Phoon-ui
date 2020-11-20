@@ -22,8 +22,8 @@ const PackagePath = path.resolve(__dirname, "../../packages", componentname);
 const Files = [
 	{
 		filename: "index.js",
-		content: `import ${componentName} from './src/main';
-        
+		content: `
+		import ${componentName} from './src/main';
         ${componentName}.install = function(Vue){
             Vue.component(${componentName}.name,${componentName});
         };
@@ -32,13 +32,14 @@ const Files = [
 	},
 	{
 		filename: "src/main.vue",
-		content: `<template>
-        <div class="ph-${componentname}"></div>
+		content: `
+		<template>
+        	<div class="ph-${componentname}"></div>
         </template>
 
         <script>
         export default {
-        name: 'PH${componentName}'
+        	name: 'PH${componentName}'
         };
         </script>`,
 	},
@@ -54,7 +55,6 @@ const Files = [
 		filename: path.join("../../test/unit/specs", `${componentname}.spec.js`),
 		content: `import {createTest,destroyVM} from '../util';
             import ${componentName} from 'packages/${componentname}';
-            
             describe('${componentName}',()=>{
                 let vm;
                 afterEach(()=>{
@@ -65,21 +65,25 @@ const Files = [
                 vm.createTest(${componentName},true);
                 expect(vm.$el).to.exist;
             });
-        });
         `,
 	},
 	{
 		filename: path.join("../../packages/theme-chalk/src", `${componentname}.scss`),
-		content: `@import "mixins/mixins";
-        @import "common/var";
+		content: `
+		@import "mixins/mixins";
+		@import "common/var";
+		
         @include b(${componentname}) {
         }
         `,
 	},
 	{
 		filename: path.join("../../types", `${componentname}.d.ts`),
-		content: `import { PhoonUIcomponent,PhoonUIcomponentSize } from './component';
-        export declare class ${componentName} extends PhoonUIcomponent {}
+		content: `
+		import { PhoonUIcomponent,PhoonUIcomponentSize } from './component';
+        export declare class ${componentName} extends PhoonUIcomponent {
+			
+		}
         `,
 	},
 ];
