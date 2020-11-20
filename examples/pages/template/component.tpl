@@ -35,6 +35,7 @@
       }
     },
     methods:{
+        /* 在mounted钩子里给链接跳转添加基础路由 */
         renderAnchorHref() {
         if (/changelog/g.test(location.href)) return;
         const anchors = document.querySelectorAll('h2 a,h3 a,h4 a,h5 a');
@@ -42,10 +43,11 @@
 
         [].slice.call(anchors).forEach(a => {
           const href = a.getAttribute('href');
-          a.href = basePath + href;
+          a.href = basePath + href; //路径上添加锚点
         });
       },
 
+       /* 点击锚跳转到最顶端 */
       goAnchor() {
         if (location.href.match(/#/g).length > 1) {
           const anchor = location.href.match(/#[^#]+$/g);

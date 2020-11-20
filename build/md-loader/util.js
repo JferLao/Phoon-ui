@@ -1,16 +1,19 @@
 const { compileTemplate } = require("@vue/component-compiler-utils");
 const compiler = require("vue-template-compiler");
 
+/* 只输出带有script标签的 */
 function stripScript(content) {
-	const result = content.match(/<(script)>([\s\S]+)<\/\1>/);
+  const result = content.match(/<(script)>([\s\S]+)<\/\1>/);
 	return result && result[2] ? result[2].trim() : "";
 }
 
+/* 只输出带有style标签的 */
 function stripStyle(content) {
 	const result = content.match(/<(style)\s*>([\s\S]+)<\/\1>/);
 	return result && result[2] ? result[2].trim() : "";
 }
 
+/* 只输出带有template标签的 */
 function stripTemplate(content){
     contet=content.trim();
     if(!content){
@@ -19,13 +22,16 @@ function stripTemplate(content){
     return content.replace(/<(script|style)[\s\S]+<\/\1>/g, '').trim();
 }
 
-
+/**
+ * 解析模板
+ * @param {template} template 
+ * @param {script} script 
+ */
 function genInlineComponentText(template, script) {
-    // https://github.com/vuejs/vue-loader/blob/423b8341ab368c2117931e909e2da9af74503635/lib/loaders/templateLoader.js#L46
     const finalOptions = {
       source: `<div>${template}</div>`,
-      filename: 'inline-component', // TODO：这里有待调整
-      compiler
+      filename: 'inline-component', 
+      compiler  
     };
     const compiled = compileTemplate(finalOptions);
     // tips
@@ -42,11 +48,13 @@ function genInlineComponentText(template, script) {
           '\n'
       );
     }
+    /* 编译后的code */
     let demoComponentContent = `
       ${compiled.code}
     `;
     script = script.trim();
     if (script) {
+      /* export default 替换为const democomponentExport = 便于后面的解构赋值 */
       script = script.replace(/export\s+default/, 'const democomponentExport =');
     } else {
       script = 'const democomponentExport = {}';

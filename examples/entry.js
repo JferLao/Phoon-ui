@@ -8,11 +8,12 @@ import icon from "./icon.json";
 import title from './i18n/title.json'
 import MainHeader from './components/header';
 import SiderNav from './components/side-nav';
-import MainFooter from './components/footer'
-
+import MainFooter from './components/footer';
+import demoBlock from './components/demo-block';
 
 
 import "packages/theme-chalk/src/index.scss";
+import "./demo-style/index.scss";
 import './assets/style/common.css';
 Vue.use(Phoon);
 Vue.use(VueRouter);
@@ -20,6 +21,7 @@ Vue.use(VueRouter);
 Vue.component('main-header', MainHeader);
 Vue.component('sider-nav',SiderNav);
 Vue.component('main-footer', MainFooter);
+Vue.component('demo-block',demoBlock);
 /* 样式 */
 
 const globalPh = new Vue({
