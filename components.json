@@ -1,4 +1,4 @@
 {
-    "button":"./packages/button/index.js",
-    "scrollbar":"./packages/scrollbar/index.js"
+  "button": "./packages/button/index.js",
+  "scrollbar": "./packages/scrollbar/index.js"
 }
