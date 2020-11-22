@@ -152,3 +152,49 @@
 		@content;
 	}
 }
+
+/* Scrollbar */
+@mixin scroll-bar {
+	$--scrollbar-thumb-background: #b4bccc;
+	$--scrollbar-track-background: #fff;
+
+	&::-webkit-scrollbar {
+		z-index: 11;
+		width: 6px;
+
+		&:horizontal {
+			height: 6px;
+		}
+
+		&-thumb {
+			border-radius: 5px;
+			width: 6px;
+			background: $--scrollbar-thumb-background;
+		}
+
+		&-corner {
+			background: $--scrollbar-track-background;
+		}
+
+		&-track {
+			background: $--scrollbar-track-background;
+
+			&-piece {
+				background: $--scrollbar-track-background;
+				width: 6px;
+			}
+		}
+	}
+}
+
+/* Break-points */
+@mixin res($key, $map: $--screams) {
+	// 检测出某个key是否存在
+	@if map-has-key($map, $key) {
+		@media only screen and #{inspect(map-get($map, $key))} {
+			@content;
+		}
+	} @else {
+		@warn "Undefeined points: `#{$map}`";
+	}
+}

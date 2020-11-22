@@ -6,8 +6,8 @@ describe("Select", () => {
 	afterEach(() => {
 		destroyVM(vm);
 	});
-});
-it("create", () => {
-	vm.createTest(Select, true);
-	expect(vm.$el).to.exist;
+	it("create", () => {
+		vm=createTest(Select, true);
+		expect(vm.$el).to.exist;
+	});
 });

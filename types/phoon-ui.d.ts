@@ -1,10 +1,10 @@
 import Vue, { PluginObject } from 'vue'
 import { PhoonUIComponent, PhoonUIComponentSize, PhoonUiHorizontalAlignment } from './component'
 
-import { PhButton } from './button'
 import { version } from 'vue/types/umd'
-
-
+import { PhButton } from './button'
+import {PhCol} from './col'
+import { PhRow  } from './row'
 import { PhSelect } from './select'
 
 export interface InstallationOptions {
@@ -22,5 +22,6 @@ export type ComponentSize = PhoonUIComponentSize
 export type HorizontalAlignment = PhoonUiHorizontalAlignment
 
 export class Button extends PhButton { }
-
+export class Col extends PhCol {}
+export class Row extends PhRow { }
 export class Select extends PhSelect { }

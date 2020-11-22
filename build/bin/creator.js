@@ -60,10 +60,10 @@ const Files = [
                 afterEach(()=>{
                     destroyVM(vm);
                 });
-            })
             it('create',()=>{
-                vm.createTest(${componentName},true);
-                expect(vm.$el).to.exist;
+                vm=createTest(${componentName},true);
+				expect(vm.$el).to.exist;
+				});
             });
         `,
 	},
@@ -103,7 +103,7 @@ fileSave(path.join(__dirname, "../../components.json"))
     
 /* 添加到index.scss */
 const sassPath = path.join(__dirname, '../../packages/theme-chalk/src/index.scss');
-const sassImportText = `${fs.readFileSync(sassPath)}@import "${componentname}.scss";`;
+const sassImportText = `${fs.readFileSync(sassPath)}@import "./${componentname}.scss";`;
 fileSave(sassPath)
 	.write(sassImportText, "utf8")
 	.end("\n");

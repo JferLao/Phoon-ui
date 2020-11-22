@@ -1,0 +1,53 @@
+@import "common/var";
+@import "mixins/mixins";
+@import "mixins/utils";
+
+/* ph-row */
+@include b(row) {
+	position: relative;
+	box-sizing: border-box;
+	@include utils-clearfix;
+
+	/* ph-row--flex */
+	@include m(flex) {
+		display: flex;
+		&::before,
+		&:after {
+			display: none;
+		}
+
+		/* .ph-row--flex.is-justify-start */
+		@include when(justify-start) {
+			justify-content: start;
+		}
+		/* .ph-row--flex.is-justify-center */
+		@include when(justify-center) {
+			justify-content: center;
+		}
+		/* .ph-row--flex.is-justify-end */
+		@include when(justify-end) {
+			justify-content: end;
+		}
+		/* .ph-row--flex.is-justify-space-between */
+		@include when(justify-space-between) {
+			justify-content: space-between;
+		}
+		/*.ph-row--flex.is-justify-space-around */
+		@include when(justify-space-around) {
+			justify-content: space-around;
+		}
+
+		/*.ph-row--flex.is-align-top */
+		@include when(align-top) {
+			align-items: flex-start;
+		}
+		/*.ph-row--flex.is-align-middle */
+		@include when(align-middle) {
+			align-items: center;
+		}
+		/*.ph-row--flex.is-align-bottom */
+		@include when(align-bottom) {
+			align-items: flex-end;
+		}
+	}
+}

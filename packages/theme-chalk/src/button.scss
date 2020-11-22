@@ -150,7 +150,7 @@
 		);
 	}
 
-	/* ph-button-success */
+	/* ph-button--success */
 	@include m(success) {
 		@include button-variant(
 			$--button-success-font-color,
