@@ -187,7 +187,7 @@ $--scorllbar-hover-background-color: rgba($--color-text-secondary, 0.5) !default
 
 
 
-/* Screem */
+/* Screem Break-point */
 $--xs:575px !default;
 $--sm:576px !default;
 $--md:768px !default;
@@ -195,7 +195,7 @@ $--lg:992px !default;
 $--xl:1200px !default;
 $--xxl:1600px !default;
 
-$--screams:(
+$--breakpoints:(
     'xs':(max-width:$--xs),
     'sm':(min-windth:$--sm),
     'md' : (min-width: $--md),
@@ -204,7 +204,7 @@ $--screams:(
     'xxl' : (min-width: $--xxl)
 );
 
-$--screams-spec:(
+$--breakpoints-spec:(
     'xs-only':(max-width:$--xs),
     'sm-and-up' : (min-width: $--sm),
     'sm-only': "(min-width: #{$--sm}) and (max-width: #{$--md - 1})",
@@ -219,4 +219,14 @@ $--screams-spec:(
     'xl-and-down' : (max-width: $--xxl - 1),
     'xl-and-up' : (min-width: $--xl),
     'xxl-only':(min-width: $--xxl),
-)
+);
+
+
+/* Header */
+$--header-padding: 0 20px !default;
+
+/* Footer */
+$--footer-padding: 0 20px !default;
+
+/* Main */
+$--main-padding: 20px !default;

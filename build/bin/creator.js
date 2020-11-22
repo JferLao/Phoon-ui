@@ -39,7 +39,8 @@ const Files = [
 
         <script>
         export default {
-        	name: 'PH${componentName}'
+			name: 'Ph${componentName}',
+			componentName:'Ph${componentName}',
         };
         </script>`,
 	},
@@ -80,8 +81,8 @@ const Files = [
 	{
 		filename: path.join("../../types", `${componentname}.d.ts`),
 		content: `
-		import { PhoonUIcomponent,PhoonUIcomponentSize } from './component';
-        export declare class ${componentName} extends PhoonUIcomponent {
+		import { PhoonUIcomponent } from './component';
+        export declare class Ph${componentName} extends PhoonUIcomponent {
 			
 		}
         `,

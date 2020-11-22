@@ -188,7 +188,7 @@
 }
 
 /* Break-points */
-@mixin res($key, $map: $--screams) {
+@mixin res($key, $map: $--breakpoints) {
 	// 检测出某个key是否存在
 	@if map-has-key($map, $key) {
 		@media only screen and #{inspect(map-get($map, $key))} {

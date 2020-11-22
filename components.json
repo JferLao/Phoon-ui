@@ -1,7 +1,12 @@
 {
+  "aside": "./packages/aside/index.js",
   "button": "./packages/button/index.js",
-  "col":"./packages/col/index.js",
-  "row":"./packages/row/index.js",
+  "col": "./packages/col/index.js",
+  "footer": "./packages/footer/index.js",
+  "header": "./packages/header/index.js",
+  "main": "./packages/main/index.js",
+  "row": "./packages/row/index.js",
   "scrollbar": "./packages/scrollbar/index.js",
-  "select": "./packages/select/index.js"
+  "select": "./packages/select/index.js",
+  "container": "./packages/container/index.js"
 }
