@@ -1,6 +1,6 @@
 {
   "name": "phoon-ui",
-  "version": "1.0.0",
+  "version": "0.2.0",
   "description": "A Vue.js 2.0 UI Component Library for Web",
   "main": "lib/phoon-ui.common.js",
   "files": [
