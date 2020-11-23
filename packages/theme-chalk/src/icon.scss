@@ -2,7 +2,8 @@
 
 @font-face {
 	font-family: "phoon-icons";
-	src: url("#{$--font-path}/phoon-icons.woff") format("woff"), url("#{$--font-path}/phoon-icons.ttf") format("truetype");
+	src: url("#{$--font-path}/phoon-icons.woff") format("woff"),
+		url("#{$--font-path}/phoon-icons.ttf") format("truetype");
 	font-weight: normal;
 	font-style: normal;
 	font-display: $--font-display;
@@ -12,6 +13,7 @@
 [class*=" ph-icon-"] {
 	font-family: "phoon-icons" !important;
 	speak: none;
+	font-size: 16px;
 	font-style: normal;
 	font-weight: normal;
 	font-variant: normal;
@@ -23,13 +25,13 @@
 	-moz-osx-font-smoothing: grayscale;
 }
 
-.ph-icons {
-	font-family: "phoon-icons" !important;
-	font-size: 16px;
-	font-style: normal;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-}
+// .ph-icon {
+// 	font-family: "phoon-icons" !important;
+// 	font-size: 16px;
+// 	font-style: normal;
+// 	-webkit-font-smoothing: antialiased;
+// 	-moz-osx-font-smoothing: grayscale;
+// }
 
 .ph-icon-creditcard:before {
 	content: "\e7fb";

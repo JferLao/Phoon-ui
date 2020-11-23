@@ -12,6 +12,7 @@ import { PhMain } from './main'
 import { PhRow } from './row'
 import { PhSelect } from './select'
 
+import { PhIcon } from './icon'
 
 export interface InstallationOptions {
     locale: any,
@@ -40,3 +41,5 @@ export class Main extends PhMain{}
 export class Row extends PhRow { }
 export class Select extends PhSelect { }
 
+
+export class Icon extends PhIcon {}

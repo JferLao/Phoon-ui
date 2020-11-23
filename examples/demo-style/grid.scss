@@ -1,0 +1,28 @@
+.ph-row{
+    margin-bottom:10px;
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+.ph-col{
+    text-align: center;
+    color: #fff;
+    font-size: 18px;
+    border: none;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.bg-light{
+    background-color:rgba(0,160,233,.7);
+}
+.bg-dark{
+    background-color:#00a0e9;
+}
+.grid-content {
+    height: 36px;
+    line-height: 36px;
+}
+.row-bg {
+    padding: 10px 0;
+    background-color: #f9fafc;
+}

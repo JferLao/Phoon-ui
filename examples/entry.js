@@ -1,6 +1,6 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import hljs from "highlight.js";
+import hljs from 'highlight.js';
 import Phoon from "main/index.js";
 import routes from "./route.config";
 import entry from "./app";
@@ -11,10 +11,11 @@ import SiderNav from './components/side-nav';
 import MainFooter from './components/footer';
 import demoBlock from './components/demo-block';
 
-
+import 'highlight.js/styles/atom-one-light.css';	//highlight样式
+import './assets/style/common.css';
 import "packages/theme-chalk/src/index.scss";
 import "./demo-style/index.scss";
-import './assets/style/common.css';
+
 Vue.use(Phoon);
 Vue.use(VueRouter);
 
@@ -25,7 +26,7 @@ Vue.component('demo-block',demoBlock);
 /* 样式 */
 
 const globalPh = new Vue({
-	data: { $isPh: false }, //是否phoon用户
+	data: { $isPh: false }, 
 });
 Vue.mixin({
 	computed: {
@@ -47,21 +48,24 @@ const router = new VueRouter({
 	routes,
 });
 
-router.afterEach((route) => {
+router.afterEach(route => {
 	Vue.nextTick(() => {
-		const blocks = document.querySelectorAll("pre code:not(.hljs)");
-		Array.prototype.forEach.call(blocks, hljs.highlightBlock);
+	  const blocks = document.querySelectorAll('pre code');
+	  blocks.forEach((block)=>{
+		hljs.highlightBlock(block)
+	  })
+	//   Array.prototype.forEach.call(blocks, highlightBlock);
 	});
-    const data = title[route.meta.lang];
-    for(let val in data ) {
-        if(new RegExp('^' + val,'g').test(route.name)) {
-            document.title = data[val];
-            return;
-        }
-    }
-    document.title = 'Phoon';
-    // ga('send', 'event', 'PageView', route.name);
-});
+	const data = title[route.meta.lang];
+	for (let val in data) {
+	  if (new RegExp('^' + val, 'g').test(route.name)) {
+		document.title = data[val];
+		return;
+	  }
+	}
+	document.title = 'Phoon';
+	// ga('send', 'event', 'PageView', route.name);
+  });
 
 new Vue({ 
 	...entry,

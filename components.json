@@ -1,6 +1,7 @@
 {
   "aside": "./packages/aside/index.js",
   "button": "./packages/button/index.js",
+  "button-group":"./packages/button-group/index.js",
   "col": "./packages/col/index.js",
   "footer": "./packages/footer/index.js",
   "header": "./packages/header/index.js",
@@ -8,5 +9,6 @@
   "row": "./packages/row/index.js",
   "scrollbar": "./packages/scrollbar/index.js",
   "select": "./packages/select/index.js",
-  "container": "./packages/container/index.js"
+  "container": "./packages/container/index.js",
+  "icon": "./packages/icon/index.js"
 }

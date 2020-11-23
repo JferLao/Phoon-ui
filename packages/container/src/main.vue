@@ -1,5 +1,7 @@
 <template>
-	<section class="ph-container" :class="{ 'is-vertical': isVertical }"></section>
+	<section class="ph-container" :class="{ 'is-vertical': isVertical }">
+		<slot></slot>
+	</section>
 </template>
 
 <script>

@@ -85,6 +85,8 @@ export default {
 		},
 		/* 跳转Codepen */
 		goCodePen() {},
+
+		/* 处理滚动 */
 		scrollHandler() {
 			const { top, bottom, left } = this.$refs.meta.getBoundingClientRect();
 			this.fixedControl =
@@ -127,7 +129,7 @@ export default {
 	},
 	watch: {
 		isExpanded(val) {
-			this.codeArea.style.height = val ? `${ this.codeAreaHeight + 1 }px` : '0';
+			this.codeArea.style.height = val ? `${this.codeAreaHeight + 1}px` : "0";
 			if (!val) {
 				this.fixedControl = false;
 				this.$refs.control.style.left = "0";
@@ -135,7 +137,7 @@ export default {
 				return;
 			}
 			setTimeout(() => {
-				this.scrollParent = document.querySelector(".page-component__scroll > .ph-scrollbar__wrap");
+				this.scrollParent = document.querySelector(".page-component__scroll > .el-scrollbar__wrap");
 				this.scrollParent && this.scrollParent.addEventListener("scroll", this.scrollHandler);
 				this.scrollHandler();
 			}, 200);

@@ -75,6 +75,7 @@
 			color: mix($--color-black, $--color-primary, $--button-active-shade-percent);
 			outline: none;
 		}
+		
 	}
 
 	/* is-disabled */
@@ -90,7 +91,32 @@
 		}
 
 		&.ph-button--text {
-			background: transparent;
+			&,
+			&:hover,
+			&:focus {
+				background-color: transparent;
+				border-color: transparent;
+				color: $--button-disabled-font-color;
+			}
+		}
+
+		&.ph-button--dashed {
+			&,
+			&:hover,
+			&:focus {
+				background-color: $--color-white;
+				border-color: $--button-disabled-border-color;
+				color: $--button-disabled-font-color;
+			}
+		}
+		&.is-ghost {
+			&,
+			&:hover,
+			&:focus {
+				background-color: transparent !important;
+				border-color: $--button-disabled-border-color;
+				color: $--button-disabled-font-color;
+			}
 		}
 
 		&.is-plain {
@@ -127,6 +153,7 @@
 		color: $--color-white;
 		background: transparent !important;
 		border-color: $--color-white;
+		
 	}
 
 	/* is-round */
@@ -180,23 +207,7 @@
 
 	/* ph-button--text */
 	@include m(text) {
-		border-color: transparent;
-		color: $--color-primary;
-		background: transparent;
-		padding-left: 0;
-		padding-right: 0;
-
-		&:hover,
-		&:focus {
-			color: mix($--color-white, $--color-primary, $--button-hover-tint-percent);
-			border-color: transparent;
-			background: transparent;
-		}
-		&:active {
-			color: mix($--color-black, $--color-primary, $--button-active-shade-percent);
-			border-color: transparent;
-			background: transparent;
-		}
+		@include button-variant($--color-primary, transparent, transparent);
 	}
 
 	/* ph-button--dashed */

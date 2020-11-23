@@ -59,6 +59,7 @@ html, body {
   }
   
   .hljs {
+    display: block;
     line-height: 1.8;
     font-family: Menlo, Monaco, Consolas, Courier, monospace;
     font-size: 12px;
