@@ -44,7 +44,7 @@ if(typeof window !== 'undefined' && window.Vue){
     
 // 导出版本号、Install方法（插件）和一些功能
 export default {
-    version:'1.0.0',
+    version:'0.3.0',
     locale:locale.i18n,
     install,
      Aside,
