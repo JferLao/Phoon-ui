@@ -34,14 +34,80 @@
 npm install phoon-ui --save-dev
 ```
 
+
+### CDN
+
+Get the latest version from[unpkg.com/phoon-ui](https://unpkg.com/phoon-ui) and import JavaScript and CSS file in your page.
+
+```html
+<!-- import CSS -->
+<link rel="stylesheet" href="https://unpkg.com/phoon-ui/lib/theme-chalk/index.css">
+<!-- import JavaScript -->
+<script src="https://unpkg.com/phoon-ui/lib/index.js"></script>
+```
+
+
+
+
 ## QuickStart
+
+### Import Phoon
+You can import Phoon entirely, or just import what you need. Let's start with fully import.
+
+#### fully import
+
+```javascript
+import Vue from 'vue';
+import PhoonUI from 'phoon-ui';
+import 'phoon-ui/lib/theme-chalk/index.css';
+import App from './App.vue';
+
+Vue.use(PhoonUI);
+
+new Vue({
+  el: '#app',
+  render: h => h(App)
+});
+```
+The above imports Phoon entirely. Note that CSS file needs to be imported separately.
+
+#### On demand
+
+With the help of [babel-plugin-component](https://github.com/QingWei-Li/babel-plugin-component), we can import components we actually need, making the project smaller than otherwise.
+
+First, install `babel-plugin-component`:
+
+
+```bash
+npm install babel-plugin-component -D
+```
+
+Then edit .babelrc:
+
+```json
+{
+  "presets": [["es2015", { "modules": false }]],
+  "plugins": [
+    [
+      "component",
+      {
+        "libraryName": "phoon-ui",
+        "styleLibraryName": "theme-chalk"
+      }
+    ]
+  ]
+}
+```
+
+Next, if you need Button , edit `main.js`:
+
 ```
 import Vue from 'vue';
 import { Button, Select } from 'phoon-ui';
 import App from './App.vue';
 
 Vue.component(Button.name, Button);
-/* 或写为
+/* or
  * Vue.use(Button)
  */
 
@@ -51,6 +117,10 @@ new Vue({
 });
 
 ```
+
+Full example (Component list reference [components.json](https://github.com/JferLao/Phoon-ui/blob/main/components.json))
+
+
 
 ## Browser Support
 
